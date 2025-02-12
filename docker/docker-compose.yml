@@ -1,0 +1,17 @@
+services:
+  app:
+    container_name: ${APP_CONTAINER_NAME:-docupet-challenge-app}
+    build:
+      context: ..
+      dockerfile: docker/app/Dockerfile
+    ports:
+      - ${APP_PORT:-3000}:3000
+    volumes:
+      - ${APP_VOLUME:-..}:/var/www
+    networks:
+      - docupet
+
+networks:
+  docupet:
+    name: docupet
+    external: true
