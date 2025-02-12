@@ -34,7 +34,21 @@ export const fr = {
             samoyed: 'Samoyède',
             siberian_husky: 'Husky Sibérien',
             taiwan_dog: 'Chien de Taiwan',
-            whippet: 'Whippet'
+            whippet: 'Whippet',
+
+            american_bobtail: 'Bobtail Américain',
+            bengal: 'Bengal',
+            chartreux: 'Chartreux',
+            foldex: 'Foldex',
+            scottish_fold: 'Scottish Fold',
+            russian_blue: 'Bleu Russe',
+            siamese: 'Siamois',
+            siberian: 'Sibérien',
+            thai: 'Thaï'
         }
+    },
+    general: {
+        yes: 'Oui',
+        no: 'Non'
     }
 };

@@ -1,7 +1,5 @@
 <template>
     <header></header>
-
-    {{ translatedPetTypes }}
     <RouterView />
 </template>
 

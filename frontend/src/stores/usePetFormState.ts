@@ -9,8 +9,8 @@ export const usePetFormState = defineStore('petFormState', () => {
 
     const name = ref<string>('');
     const gender = ref<'m' | 'f'>('m');
-    const date_of_birth = ref<string | undefined>();
-    const estimated_age = ref<number | undefined>();
+    const dateOfBirth = ref<Date | undefined>();
+    const estimatedAge = ref<number | undefined>();
     const type = ref<'cat' | 'dog'>('cat');
     const breed = ref<string | undefined>();
     const breedMix = ref<string>('');
@@ -19,8 +19,8 @@ export const usePetFormState = defineStore('petFormState', () => {
         return {
             name: name.value,
             gender: gender.value,
-            date_of_birth: date_of_birth.value,
-            estimated_age: estimated_age.value,
+            date_of_birth: dateOfBirth.value?.toISOString(),
+            estimated_age: estimatedAge.value,
             type: type.value,
             breed: breed.value,
             breed_mix: breedMix.value
@@ -39,5 +39,5 @@ export const usePetFormState = defineStore('petFormState', () => {
         return response.body;
     }
 
-    return { name, gender, date_of_birth, estimated_age, type, breed, breedMix, savePet };
+    return { name, gender, dateOfBirth, estimatedAge, type, breed, breedMix, savePet };
 });

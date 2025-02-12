@@ -8,7 +8,7 @@ export const usePetCharacteristics = defineStore('petCharacteristics', () => {
 
     const petTypes = ref<string[]>([]);
     const petBreeds = ref<string[]>([]);
-    const petGenders = ref<string[]>(['m', 'f']);
+    const petGenders = ref<string[]>(['f', 'm']);
 
     async function loadPetTypes(): Promise<void> {
         const response = await registrationService.getPetTypes();
@@ -34,5 +34,5 @@ export const usePetCharacteristics = defineStore('petCharacteristics', () => {
         petBreeds.value = response.body;
     }
 
-    return { petTypes, petBreeds, loadPetTypes, loadPetBreeds };
+    return { petTypes, petBreeds, petGenders, loadPetTypes, loadPetBreeds };
 });

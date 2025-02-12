@@ -1,15 +1,15 @@
 :root {
-    --p-primary-50: #f5f8fc;
-    --p-primary-100: #e1eaf5;
-    --p-primary-200: #c3d4eb;
-    --p-primary-300: #a3bbdf;
-    --p-primary-400: #7d9dcd;
-    --p-primary-500: #5b82b8;
-    --p-primary-600: #4a6ea3;
-    --p-primary-700: #3e5d8a;
-    --p-primary-800: #314b6e;
-    --p-primary-900: #263954;
-    --p-primary-950: #1b293d;
+    --p-primary-50: #f0faff;
+    --p-primary-100: #ccf0fd;
+    --p-primary-200: #99e0fb;
+    --p-primary-300: #66cef8;
+    --p-primary-400: #33bdf4;
+    --p-primary-500: #00a0e1;
+    --p-primary-600: #0086c1;
+    --p-primary-700: #006b9b;
+    --p-primary-800: #005277;
+    --p-primary-900: #003b58;
+    --p-primary-950: #002638;
 
     --p-surface-0: #ffffff;
     --p-surface-50: #f8f9fa;
@@ -43,4 +43,28 @@
     --p-text-hover-color: var(--p-surface-800);
     --p-text-muted-color: var(--p-surface-500);
     --p-text-hover-muted-color: var(--p-surface-600);
+}
+
+.pet-registration-form .gender-select-button {
+    @apply border border-primary p-0 w-48;
+}
+
+.pet-registration-form .gender-select-button > .p-togglebutton {
+    @apply py-1 w-1/2;
+}
+
+.pet-registration-form .gender-select-button > .p-togglebutton.p-togglebutton-checked {
+    @apply text-white bg-primary;
+}
+
+.pet-registration-form .gender-select-button > .p-togglebutton:not(.p-togglebutton-checked) {
+    @apply text-primary bg-white;
+}
+
+.pet-registration-form .gender-select-button > .p-togglebutton:not(.p-togglebutton-checked):hover {
+    @apply text-white bg-primary;
+}
+
+.pet-registration-form .gender-select-button > .p-togglebutton.p-togglebutton-checked:before {
+    @apply bg-transparent;
 }
