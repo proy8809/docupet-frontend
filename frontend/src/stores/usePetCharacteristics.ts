@@ -15,7 +15,8 @@ export const usePetCharacteristics = defineStore('petCharacteristics', () => {
 
         if (isFailingResponse(response) === true) {
             petTypes.value = [];
-            return;
+
+            throw new Error(response.body.message);
         }
 
         petTypes.value = response.body;
@@ -26,7 +27,8 @@ export const usePetCharacteristics = defineStore('petCharacteristics', () => {
 
         if (isFailingResponse(response) === true) {
             petBreeds.value = [];
-            return;
+
+            throw new Error(response.body.message);
         }
 
         petBreeds.value = response.body;
