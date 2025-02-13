@@ -3,6 +3,7 @@
 NETWORK=docupet
 
 cp .env.example .env
+cp ../frontend/.env.example ../frontend/.env
 
 if ! docker network inspect "${NETWORK}" >/dev/null 2>&1; then
     docker network create --driver bridge ${NETWORK}
