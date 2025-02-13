@@ -9,10 +9,6 @@ export class PetRegistrationService {
         this.axiosClient = new AxiosClient();
     }
 
-    public async getPetTypes(): Promise<HttpResponse<string[]>> {
-        return await this.axiosClient.get<string[]>('/api/types');
-    }
-
     public async getPetBreeds(type: string): Promise<HttpResponse<string[]>> {
         return await this.axiosClient.get<string[]>(`/api/types/${type}/breeds`);
     }

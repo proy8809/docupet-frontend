@@ -11,7 +11,7 @@ export const usePetFormState = defineStore('petFormState', () => {
     const name = ref<string>();
     const gender = ref<'m' | 'f'>();
     const dateOfBirth = ref<Date>();
-    const estimatedAge = ref<number>(1);
+    const estimatedAge = ref<number>();
     const breed = ref<string>();
     const breedMix = ref<string>('');
     const otherBreedOption = ref<'mix' | 'unknown' | undefined>('unknown');
