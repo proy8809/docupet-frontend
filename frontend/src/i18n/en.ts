@@ -92,6 +92,7 @@ export const en = {
             breed: 'Breed',
             gender: 'Gender',
             age: 'Age',
+            unknown_breed: 'Unknown',
             register_another_one: 'Register another one now!',
             warning: {
                 title: 'Be careful!',

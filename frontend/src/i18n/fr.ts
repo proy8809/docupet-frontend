@@ -93,6 +93,7 @@ export const fr = {
             breed: 'Race',
             gender: 'Genre',
             age: 'Age',
+            unknown_breed: 'Inconnue',
             register_another_one: 'Enregistrez-en un autre!',
             warning: {
                 title: 'Attention!',
