@@ -20,6 +20,16 @@ export const usePetFormState = defineStore('petFormState', () => {
         return validatePayload(payload, otherBreedOption.value);
     });
 
+    function clearPet(): void {
+        name.value = undefined;
+        gender.value = undefined;
+        dateOfBirth.value = undefined;
+        estimatedAge.value = 1;
+        breed.value = undefined;
+        breedMix.value = '';
+        otherBreedOption.value = 'unknown';
+    }
+
     function isFilled<T>(value: T | undefined): value is T {
         return value !== undefined;
     }
@@ -43,10 +53,13 @@ export const usePetFormState = defineStore('petFormState', () => {
 
         const isGenderValid = isFilled(payload.gender);
 
-        const isDateOfBirthValid = isFilled(payload.date_of_birth) || isFilled(payload.estimated_age);
+        const isDateOfBirthValid =
+            isFilled(payload.date_of_birth) || isFilled(payload.estimated_age);
 
         const breedMixPrecondition =
-            otherBreedOption === 'mix' && isFilled(payload.breed_mix) && payload.breed_mix.trim() !== '';
+            otherBreedOption === 'mix' &&
+            isFilled(payload.breed_mix) &&
+            payload.breed_mix.trim() !== '';
 
         const breedUnknownPrecondition = otherBreedOption === 'unknown';
 
@@ -73,5 +86,16 @@ export const usePetFormState = defineStore('petFormState', () => {
         return response.body;
     }
 
-    return { name, gender, dateOfBirth, estimatedAge, breed, breedMix, otherBreedOption, isFormStateValid, savePet };
+    return {
+        name,
+        gender,
+        dateOfBirth,
+        estimatedAge,
+        breed,
+        breedMix,
+        otherBreedOption,
+        isFormStateValid,
+        savePet,
+        clearPet
+    };
 });

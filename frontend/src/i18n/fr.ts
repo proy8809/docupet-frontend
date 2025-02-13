@@ -7,8 +7,10 @@ export const fr = {
             pet_breed_not_found: "Race d'animal de compagnie introuvable.",
             invalid_pet_type: "Le type de l'animal de compagnie n'est pas valide.",
             invalid_pet_gender: "Le genre de l'animal de compagnie n'est pas valide.",
-            missing_birthdate_data: 'Les informations relatives à la date de naissance ne sont pas définies.',
-            pet_breed_does_not_belong_to_pet_type: "La race de l'animal de compagnie n'est pas associé à ce type."
+            missing_birthdate_data:
+                'Les informations relatives à la date de naissance ne sont pas définies.',
+            pet_breed_does_not_belong_to_pet_type:
+                "La race de l'animal de compagnie n'est pas associé à ce type."
         }
     },
     domain: {
@@ -17,8 +19,8 @@ export const fr = {
             f: 'Femelle'
         },
         types: {
-            cat: 'Chat',
-            dog: 'Chien'
+            cat: 'chat',
+            dog: 'chien'
         },
         breeds: {
             afghan_hound: 'Lévrier Afghan',
@@ -45,10 +47,25 @@ export const fr = {
             siamese: 'Siamois',
             siberian: 'Sibérien',
             thai: 'Thaï'
-        }
+        },
+        age: 'Né(e) cette année | {n} an | {n} ans'
     },
     general: {
         yes: 'Oui',
         no: 'Non'
+    },
+    validation: {
+        invalid_form_data: 'Les données du formulaire ne sont pas valides.'
+    },
+    ui: {
+        dog_registered: {
+            name: 'Nom',
+            type: 'Type',
+            breed: 'Race',
+            gender: 'Genre',
+            age: 'Age',
+            warning: 'Attention! {name} est un {breed}. Cette race est considérée dangereuse!',
+            register_another_one: 'Enregistrez-en un autre dès maintenant!'
+        }
     }
 };

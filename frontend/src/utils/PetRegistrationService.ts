@@ -18,6 +18,6 @@ export class PetRegistrationService {
     }
 
     public async createPet(pet: Pet): Promise<HttpResponse<PetSummary>> {
-        return await this.axiosClient.post<PetSummary>(`/api/pet`, pet);
+        return await this.axiosClient.post<PetSummary>(`/api/pets`, pet);
     }
 }

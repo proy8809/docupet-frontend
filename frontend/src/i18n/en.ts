@@ -8,7 +8,8 @@ export const en = {
             invalid_pet_type: "The pet's type is not valid.",
             invalid_pet_gender: "The pet's gender is not valid.",
             missing_birthdate_data: 'Birth related data is not defined.',
-            pet_breed_does_not_belong_to_pet_type: 'This pet breed does not belong to this pet type.'
+            pet_breed_does_not_belong_to_pet_type:
+                'This pet breed does not belong to this pet type.'
         }
     },
     domain: {
@@ -17,8 +18,8 @@ export const en = {
             f: 'Female'
         },
         types: {
-            cat: 'Cat',
-            dog: 'Dog'
+            cat: 'cat',
+            dog: 'dog'
         },
         breeds: {
             afghan_hound: 'Afghan hound',
@@ -45,10 +46,25 @@ export const en = {
             siamese: 'Siamese',
             siberian: 'Siberian',
             thai: 'Thai'
-        }
+        },
+        age: 'Born this year | {n} year old | {n} years old'
     },
     general: {
         yes: 'Yes',
         no: 'No'
+    },
+    validation: {
+        invalid_form_data: 'Form data is not valid.'
+    },
+    ui: {
+        dog_registered: {
+            name: 'Name',
+            type: 'Type',
+            breed: 'Breed',
+            gender: 'Gender',
+            age: 'Age',
+            warning: 'Be careful! {name} is a {breed}. This breed is considered dangerous!',
+            register_another_one: 'Register another one now!'
+        }
     }
 };

@@ -15,7 +15,11 @@
             <PetBirthday v-model:date-of-birth="dateOfBirth" v-model:estimated-age="estimatedAge" />
         </template>
         <template #footer>
-            <ButtonControl :disabled="isFormStateValid === false" label="Continue" />
+            <ButtonControl
+                :disabled="isFormStateValid === false"
+                label="Continue"
+                @click="$emit('submit')"
+            />
         </template>
     </PetRegistrationCard>
 </template>
@@ -34,9 +38,19 @@
 
     const route = useRoute();
 
+    defineEmits<{ (e: 'submit'): void }>();
+
     const { loadPetBreeds } = usePetCharacteristics();
-    const { name, gender, dateOfBirth, estimatedAge, breed, breedMix, otherBreedOption, isFormStateValid } =
-        storeToRefs(usePetFormState());
+    const {
+        name,
+        gender,
+        dateOfBirth,
+        estimatedAge,
+        breed,
+        breedMix,
+        otherBreedOption,
+        isFormStateValid
+    } = storeToRefs(usePetFormState());
 
     function handleBreedMixClicked(): void {
         breed.value = undefined;
