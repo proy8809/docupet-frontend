@@ -12,7 +12,7 @@
         <template #footer>
             <ButtonControl
                 :label="t('ui.pet_registered.register_another_one')"
-                @click="$emit('click:clear')"
+                @click="$emit('click:register-another-one')"
             />
         </template>
     </PetRegistrationCard>
@@ -29,7 +29,7 @@
     const route = useRoute();
 
     defineEmits<{
-        (e: 'click:clear'): void;
+        (e: 'click:register-another-one'): void;
     }>();
 
     defineProps<{

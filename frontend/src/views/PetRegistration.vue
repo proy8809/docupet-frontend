@@ -1,12 +1,16 @@
 <template>
     <Toast />
     <PetRegistrationForm v-if="petSummary === undefined" @submit="handleFormSubmitted" />
-    <PetRegistrationSummary v-else :pet-summary="petSummary" @click:clear="handleSummaryCleared" />
+    <PetRegistrationSummary
+        v-else
+        :pet-summary="petSummary"
+        @click:register-another-one="registerAnotherOneClicked"
+    />
 </template>
 <script setup lang="ts">
     import { usePetFormState } from '@/stores/usePetFormState';
     import PetRegistrationForm from './sections/PetRegistrationForm.vue';
-    import { useRoute } from 'vue-router';
+    import { useRoute, useRouter } from 'vue-router';
     import { PetSummary } from '@/stores/usePetFormState.defs';
     import { ref } from 'vue';
     import PetRegistrationSummary from './sections/PetRegistrationSummary.vue';
@@ -14,6 +18,7 @@
     import { useI18n } from 'vue-i18n';
 
     const route = useRoute();
+    const router = useRouter();
     const toast = useToast();
     const { t } = useI18n();
 
@@ -34,7 +39,7 @@
         }
     }
 
-    function handleSummaryCleared(): void {
-        petSummary.value = undefined;
+    function registerAnotherOneClicked(): void {
+        router.push({ name: 'index' });
     }
 </script>
