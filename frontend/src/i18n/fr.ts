@@ -51,6 +51,7 @@ export const fr = {
         age: 'Né(e) cette année | {n} an | {n} ans'
     },
     general: {
+        title: 'DocuPet - Enregistrez votre animal!',
         toast: {
             error: 'Erreur!',
             success: 'Succès!'

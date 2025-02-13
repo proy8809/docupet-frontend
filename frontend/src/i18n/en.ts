@@ -50,6 +50,7 @@ export const en = {
         age: 'Born this year | {n} year old | {n} years old'
     },
     general: {
+        title: 'DocuPet - Register your pet now!',
         toast: {
             error: 'Error!',
             success: 'Success!'
