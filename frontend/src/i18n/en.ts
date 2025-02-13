@@ -50,6 +50,10 @@ export const en = {
         age: 'Born this year | {n} year old | {n} years old'
     },
     general: {
+        toast: {
+            error: 'Error!',
+            success: 'Success!'
+        },
         yes: 'Yes',
         no: 'No'
     },

@@ -3,6 +3,7 @@ import { computed, Ref, ref } from 'vue';
 import { Pet, PetSummary } from './usePetFormState.defs';
 import { PetRegistrationService } from '@/utils/PetRegistrationService';
 import { isFailingResponse } from '@/utils/AxiosClient.defs';
+import { useToast } from 'primevue';
 
 export const usePetFormState = defineStore('petFormState', () => {
     const registrationService = new PetRegistrationService();

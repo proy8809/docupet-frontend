@@ -51,6 +51,10 @@ export const fr = {
         age: 'Né(e) cette année | {n} an | {n} ans'
     },
     general: {
+        toast: {
+            error: 'Erreur!',
+            success: 'Succès!'
+        },
         yes: 'Oui',
         no: 'Non'
     },
