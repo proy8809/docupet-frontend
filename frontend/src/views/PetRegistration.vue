@@ -12,7 +12,7 @@
     import PetRegistrationForm from './sections/PetRegistrationForm.vue';
     import { useRoute, useRouter } from 'vue-router';
     import { PetSummary } from '@/stores/usePetFormState.defs';
-    import { ref } from 'vue';
+    import { onMounted, ref } from 'vue';
     import PetRegistrationSummary from './sections/PetRegistrationSummary.vue';
     import { Toast, useToast } from 'primevue';
     import { useI18n } from 'vue-i18n';
@@ -29,7 +29,6 @@
     async function handleFormSubmitted(): Promise<void> {
         try {
             petSummary.value = await savePet(route.params.petType as 'cat' | 'dog');
-            clearPet();
         } catch (err: any) {
             toast.add({
                 severity: 'error',
@@ -42,4 +41,8 @@
     function registerAnotherOneClicked(): void {
         router.push({ name: 'index' });
     }
+
+    onMounted(() => {
+        clearPet();
+    });
 </script>
