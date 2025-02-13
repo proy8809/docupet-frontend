@@ -58,14 +58,36 @@ export const fr = {
         invalid_form_data: 'Les données du formulaire ne sont pas valides.'
     },
     ui: {
-        dog_registered: {
+        pet_form: {
+            title: 'Dites-nous en plus sur votre {type}',
+            labels: {
+                name: 'Quel est le nom de votre {type}?',
+                breed: 'Quelle est sa race?',
+                choose: 'Choisissez',
+                unknown: 'Je ne sais pas',
+                mix: "C'est une race croisée",
+                gender: 'Quel est son genre?',
+                know_birthdate: 'Connaissez-vous sa date de naissance?',
+                birthdate: 'Date de naissance',
+                approximate_age: 'Âge approximative'
+            },
+            placeholders: {
+                cant_find: 'Vous ne trouvez pas?'
+            },
+            action: 'Continuer'
+        },
+        pet_registered: {
+            title: 'Votre {type} a été enregistré avec succès!',
             name: 'Nom',
             type: 'Type',
             breed: 'Race',
             gender: 'Genre',
             age: 'Age',
-            warning: 'Attention! {name} est un {breed}. Cette race est considérée dangereuse!',
-            register_another_one: 'Enregistrez-en un autre dès maintenant!'
+            register_another_one: 'Enregistrez-en un autre dès maintenant!',
+            warning: {
+                title: 'Attention!',
+                message: '{name} est un {breed}. Cette race est considérée dangereuse!'
+            }
         }
     }
 };

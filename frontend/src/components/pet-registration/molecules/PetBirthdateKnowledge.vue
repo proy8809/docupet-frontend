@@ -1,5 +1,5 @@
 <template>
-    <WithLabel label="Do you know their date of birth?">
+    <WithLabel :label="t('ui.pet_form.labels.know_birthdate')">
         <SwitchControl :options="birthdateKnowledgeOptions" v-model="modelValue" />
     </WithLabel>
 </template>

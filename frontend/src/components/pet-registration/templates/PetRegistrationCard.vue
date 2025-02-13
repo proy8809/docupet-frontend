@@ -1,6 +1,6 @@
 <template>
-    <div class="flex justify-center items-center min-h-screen bg-gray-100 pet-registration-form">
-        <Card class="w-full max-w-lg p-6 shadow-md bg-white rounded-lg">
+    <div class="flex justify-center items-center min-h-screen bg-gray-100 pet-registration">
+        <Card class="w-full max-w-xl p-6 shadow-md bg-white rounded-lg">
             <template #title>
                 <h1 class="text-xl font-semibold text-primary-800">{{ $props.title }}</h1>
             </template>

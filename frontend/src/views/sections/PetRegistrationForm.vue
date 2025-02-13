@@ -1,5 +1,11 @@
 <template>
-    <PetRegistrationCard title="Tell us about your dog">
+    <PetRegistrationCard
+        :title="
+            t('ui.pet_form.labels.name', {
+                type: t(`domain.types.${route.params.petType as string}`)
+            })
+        "
+    >
         <template #content>
             <PetNameField v-model="name" />
             <PetBreed
@@ -17,7 +23,7 @@
         <template #footer>
             <ButtonControl
                 :disabled="isFormStateValid === false"
-                label="Continue"
+                :label="t('ui.pet_form.action')"
                 @click="$emit('submit')"
             />
         </template>
@@ -35,7 +41,9 @@
     import PetGenderField from '@/components/pet-registration/molecules/PetGenderField.vue';
     import PetBirthday from '@/components/pet-registration/organisms/PetBirthday.vue';
     import ButtonControl from '@/components/pet-registration/atoms/ButtonControl.vue';
+    import { useI18n } from 'vue-i18n';
 
+    const { t } = useI18n();
     const route = useRoute();
 
     defineEmits<{ (e: 'submit'): void }>();

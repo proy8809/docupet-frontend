@@ -1,5 +1,5 @@
 <template>
-    <WithLabel label="What gender are they?">
+    <WithLabel :label="t('ui.pet_form.labels.gender')">
         <SwitchControl :options="translatedPetGenders" v-model="modelValue" />
     </WithLabel>
 </template>

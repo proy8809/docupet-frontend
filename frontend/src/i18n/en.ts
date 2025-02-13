@@ -57,14 +57,36 @@ export const en = {
         invalid_form_data: 'Form data is not valid.'
     },
     ui: {
-        dog_registered: {
+        pet_form: {
+            title: 'Tell us about your {type}',
+            labels: {
+                name: "Tell us about your {type}'s name?",
+                breed: 'What breed are they?',
+                choose: 'Choose one',
+                unknown: "I don't know",
+                mix: "It's a mix",
+                gender: 'What gender are they?',
+                know_birthdate: 'Do you know their date of birth?',
+                birthdate: 'Birthdate',
+                approximate_age: 'Approximate Age'
+            },
+            placeholders: {
+                cant_find: "Can't find it?"
+            },
+            action: 'Continue'
+        },
+        pet_registered: {
+            title: 'Your {type} has been successfully registered!',
             name: 'Name',
             type: 'Type',
             breed: 'Breed',
             gender: 'Gender',
             age: 'Age',
-            warning: 'Be careful! {name} is a {breed}. This breed is considered dangerous!',
-            register_another_one: 'Register another one now!'
+            register_another_one: 'Register another one now!',
+            warning: {
+                title: 'Be careful!',
+                message: '{name} is a {breed}. This breed is considered dangerous!'
+            }
         }
     }
 };

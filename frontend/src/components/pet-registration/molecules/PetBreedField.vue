@@ -1,8 +1,8 @@
 <template>
-    <WithLabel label="What breed are they?">
+    <WithLabel :label="t('ui.pet_form.labels.breed')">
         <SearchControl
             v-model="modelValue"
-            placeholder="Can't find it?"
+            :placeholder="t('ui.pet_form.placeholders.cant_find')"
             :options="translatedBreeds"
             @fill="$emit('fill')"
             @clear="$emit('clear')"
@@ -31,6 +31,9 @@
     const { petBreeds } = storeToRefs(usePetCharacteristics());
 
     const translatedBreeds = computed<TranslatedOption[]>(() => {
-        return petBreeds.value.map((petBreed: string) => ({ value: petBreed, label: t(`domain.breeds.${petBreed}`) }));
+        return petBreeds.value.map((petBreed: string) => ({
+            value: petBreed,
+            label: t(`domain.breeds.${petBreed}`)
+        }));
     });
 </script>

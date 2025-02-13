@@ -1,30 +1,30 @@
 <template>
-    <table class="w-full border-collapse border border-surface-300">
+    <table class="pet-summary-table">
         <tbody>
-            <tr class="summary-row">
-                <td class="label">{{ t(`ui.dog_registered.name`) }}</td>
+            <tr>
+                <td class="label">{{ t(`ui.pet_registered.name`) }}</td>
                 <td class="value">{{ $props.petSummary.name }}</td>
             </tr>
-            <tr class="summary-row">
-                <td class="label">{{ t(`ui.dog_registered.type`) }}</td>
+            <tr>
+                <td class="label">{{ t(`ui.pet_registered.type`) }}</td>
                 <td class="value capitalize">
                     {{ t(`domain.types.${$props.petSummary.type}`) }}
                 </td>
             </tr>
-            <tr class="summary-row">
-                <td class="label">{{ t(`ui.dog_registered.breed`) }}</td>
+            <tr>
+                <td class="label">{{ t(`ui.pet_registered.breed`) }}</td>
                 <td class="value">
-                    {{ t(`domain.breeds.${$props.petSummary.breed}`) }}
+                    {{ breed }}
                 </td>
             </tr>
-            <tr class="summary-row">
-                <td class="label">{{ t(`ui.dog_registered.gender`) }}</td>
+            <tr>
+                <td class="label">{{ t(`ui.pet_registered.gender`) }}</td>
                 <td class="value">
                     {{ t(`domain.genders.${$props.petSummary.gender}`) }}
                 </td>
             </tr>
-            <tr class="summary-row">
-                <td class="label">{{ t(`ui.dog_registered.age`) }}</td>
+            <tr>
+                <td class="label">{{ t(`ui.pet_registered.age`) }}</td>
                 <td class="value">
                     {{ t('domain.age', $props.petSummary.age) }}
                 </td>
@@ -32,42 +32,36 @@
         </tbody>
     </table>
 
-    <div
-        class="p-4 text-white font-bold bg-red-600 border-danger rounded-md shadow-md border"
-        v-if="$props.petSummary.is_dangerous"
-    >
+    <div class="pet-summary-warning" v-if="$props.petSummary.is_dangerous">
         {{
-            t('ui.dog_registered.warning', {
+            t('ui.pet_registered.warning', {
                 name: $props.petSummary.name,
                 breed: t(`domain.breeds.${$props.petSummary.breed}`)
             })
         }}
     </div>
 </template>
+
 <script setup lang="ts">
     import { PetSummary } from '@/stores/usePetFormState.defs';
+    import { computed } from 'vue';
     import { useI18n } from 'vue-i18n';
 
     const { t } = useI18n();
 
-    defineProps<{
+    const props = defineProps<{
         petSummary: PetSummary;
     }>();
+
+    const breed = computed<string>(() => {
+        if (props.petSummary.breed !== null) {
+            return t(`domain.breeds.${props.petSummary.breed}`);
+        }
+
+        if (props.petSummary.breed_mix !== '') {
+            return props.petSummary.breed_mix;
+        }
+
+        return t(`ui.pet_registered.unknown_breed`);
+    });
 </script>
-<style lang="css" scoped>
-    .summary-row:not(:last-child) {
-        @apply border-b border-surface-200;
-    }
-
-    .summary-row:nth-child(odd) {
-        @apply bg-surface-50;
-    }
-
-    .summary-row > .label {
-        @apply w-1/2 p-2 font-semibold;
-    }
-
-    .summary-row > .value {
-        @apply w-1/2 p-2;
-    }
-</style>
