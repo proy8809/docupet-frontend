@@ -11,6 +11,7 @@
     import SwitchControl from '@/components/pet-registration/atoms/SwitchControl.vue';
     import WithLabel from '@/components/pet-registration/wrappers/WithLabel.vue';
     import { TranslatedOption } from '@/utils/General.defs';
+    import { computed, ref } from 'vue';
     import { useI18n } from 'vue-i18n';
 
     const { t } = useI18n();
@@ -20,10 +21,10 @@
         (e: 'click:birthdate-unknown'): void;
     }>();
 
-    const birthdateKnowledgeOptions: TranslatedOption[] = [
+    const birthdateKnowledgeOptions = computed<TranslatedOption[]>(() => [
         { value: true, label: t('general.yes') },
         { value: false, label: t('general.no') }
-    ];
+    ]);
 
     const modelValue = defineModel<boolean>('modelValue');
 
