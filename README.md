@@ -19,6 +19,10 @@ In order to shut the docker down, simply execute this shell script in the same d
 ./down.sh
 ```
 
+## How To Use Me
+
+Go to `http://localhost:3000` on your browser.
+
 ## Technologies Uses
 
 | Technology used  | Reason                    |

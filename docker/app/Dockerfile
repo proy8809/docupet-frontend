@@ -2,11 +2,12 @@ FROM node
 
 WORKDIR /var/www
 
-RUN chown node:node /var/www
+RUN chown -R node:node /var/www
 
 COPY --chown=node:node ./frontend /var/www
 
-USER node
-RUN npm ci
+COPY ./docker/app/entrypoint.sh /
 
-CMD ["npm", "run", "dev"]
+USER node
+
+CMD ["/entrypoint.sh"]

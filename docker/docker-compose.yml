@@ -7,7 +7,7 @@ services:
     ports:
       - ${APP_PORT:-3000}:3000
     volumes:
-      - ${APP_VOLUME:-..}:/var/www
+      - ${APP_VOLUME:-../frontend}:/var/www
     networks:
       - docupet
 
