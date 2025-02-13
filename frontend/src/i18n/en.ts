@@ -95,7 +95,7 @@ export const en = {
             register_another_one: 'Register another one now!',
             warning: {
                 title: 'Be careful!',
-                message: '{name} is a {breed}. This breed is considered dangerous!'
+                message: "{name}'s breed is {breed}. It is considered dangerous!"
             }
         }
     }

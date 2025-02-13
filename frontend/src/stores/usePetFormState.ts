@@ -4,6 +4,7 @@ import { Pet, PetSummary } from './usePetFormState.defs';
 import { PetRegistrationService } from '@/utils/PetRegistrationService';
 import { isFailingResponse } from '@/utils/AxiosClient.defs';
 import { useToast } from 'primevue';
+import { useValidatePet } from '@/utils/useValidatePet';
 
 export const usePetFormState = defineStore('petFormState', () => {
     const registrationService = new PetRegistrationService();
@@ -18,7 +19,7 @@ export const usePetFormState = defineStore('petFormState', () => {
 
     const isFormStateValid = computed<boolean>(() => {
         const payload = getPayload();
-        return validatePayload(payload, otherBreedOption.value);
+        return useValidatePet(payload, otherBreedOption.value);
     });
 
     function clearPet(): void {
@@ -29,10 +30,6 @@ export const usePetFormState = defineStore('petFormState', () => {
         breed.value = undefined;
         breedMix.value = '';
         otherBreedOption.value = 'unknown';
-    }
-
-    function isFilled<T>(value: T | undefined): value is T {
-        return value !== undefined;
     }
 
     function getPayload(): Omit<Partial<Pet>, 'type'> {
@@ -46,35 +43,10 @@ export const usePetFormState = defineStore('petFormState', () => {
         };
     }
 
-    function validatePayload(
-        payload: Omit<Partial<Pet>, 'type'>,
-        otherBreedOption: 'mix' | 'unknown' | undefined
-    ): payload is Omit<Pet, 'type'> {
-        const isNameValid = isFilled(payload.name);
-
-        const isGenderValid = isFilled(payload.gender);
-
-        const isDateOfBirthValid =
-            isFilled(payload.date_of_birth) || isFilled(payload.estimated_age);
-
-        const breedMixPrecondition =
-            otherBreedOption === 'mix' &&
-            isFilled(payload.breed_mix) &&
-            payload.breed_mix.trim() !== '';
-
-        const breedUnknownPrecondition = otherBreedOption === 'unknown';
-
-        const breedPrecondition = isFilled(payload.breed);
-
-        const isBreedValid = breedMixPrecondition || breedUnknownPrecondition || breedPrecondition;
-
-        return isNameValid && isGenderValid && isDateOfBirthValid && isBreedValid;
-    }
-
     async function savePet(type: 'cat' | 'dog'): Promise<PetSummary> {
         const payload = getPayload();
 
-        if (validatePayload(payload, otherBreedOption.value) === false) {
+        if (useValidatePet(payload, otherBreedOption.value) === false) {
             throw new Error('validation.invalid_form_data');
         }
 
