@@ -45,26 +45,30 @@
     --p-text-hover-muted-color: var(--p-surface-600);
 }
 
-.pet-registration-form .gender-select-button {
+.pet-registration-form .switch-control {
     @apply border border-primary p-0 w-48;
 }
 
-.pet-registration-form .gender-select-button > .p-togglebutton {
+.pet-registration-form .switch-control > .p-togglebutton {
     @apply py-1 w-1/2;
 }
 
-.pet-registration-form .gender-select-button > .p-togglebutton.p-togglebutton-checked {
+.pet-registration-form .switch-control > .p-togglebutton.p-togglebutton-checked {
     @apply text-white bg-primary;
 }
 
-.pet-registration-form .gender-select-button > .p-togglebutton:not(.p-togglebutton-checked) {
+.pet-registration-form .switch-control > .p-togglebutton:not(.p-togglebutton-checked) {
     @apply text-primary bg-white;
 }
 
-.pet-registration-form .gender-select-button > .p-togglebutton:not(.p-togglebutton-checked):hover {
+.pet-registration-form .switch-control > .p-togglebutton:not(.p-togglebutton-checked):hover {
     @apply text-white bg-primary;
 }
 
-.pet-registration-form .gender-select-button > .p-togglebutton.p-togglebutton-checked:before {
+.pet-registration-form .switch-control > .p-togglebutton.p-togglebutton-checked:before {
     @apply bg-transparent;
+}
+
+.pet-registration-form .p-button:disabled {
+    @apply bg-[#dcdcdc] border-[#dcdcdc];
 }
