@@ -20,7 +20,7 @@
 <script setup lang="ts">
     import ButtonControl from '@/components/pet-registration/atoms/ButtonControl.vue';
     import PetSummaryData from '@/components/pet-registration/organisms/PetSummaryData.vue';
-    import PetRegistrationCard from '@/components/pet-registration/templates/PetRegistrationCard.vue';
+    import PetRegistrationCard from '@/views/layouts/PetRegistrationCard.vue';
     import { PetSummary } from '@/stores/usePetFormState.defs';
     import { useI18n } from 'vue-i18n';
     import { useRoute } from 'vue-router';

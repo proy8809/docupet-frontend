@@ -55,12 +55,17 @@ export const en = {
             success: 'Success!'
         },
         yes: 'Yes',
-        no: 'No'
+        no: 'No',
+        other_language: 'Français',
+        back_home: 'Back to index'
     },
     validation: {
         invalid_form_data: 'Form data is not valid.'
     },
     ui: {
+        index: {
+            title: 'Register your pet'
+        },
         pet_form: {
             title: 'Tell us about your {type}',
             labels: {

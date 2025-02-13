@@ -56,12 +56,17 @@ export const fr = {
             success: 'Succès!'
         },
         yes: 'Oui',
-        no: 'Non'
+        no: 'Non',
+        other_language: 'English',
+        back_home: "Retour à l'accueil"
     },
     validation: {
         invalid_form_data: 'Les données du formulaire ne sont pas valides.'
     },
     ui: {
+        index: {
+            title: 'Enregistrez votre animal de compagnie'
+        },
         pet_form: {
             title: 'Dites-nous en plus sur votre {type}',
             labels: {
@@ -87,7 +92,7 @@ export const fr = {
             breed: 'Race',
             gender: 'Genre',
             age: 'Age',
-            register_another_one: 'Enregistrez-en un autre dès maintenant!',
+            register_another_one: 'Enregistrez-en un autre!',
             warning: {
                 title: 'Attention!',
                 message: '{name} est un {breed}. Cette race est considérée dangereuse!'

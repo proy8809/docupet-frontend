@@ -32,7 +32,7 @@
         </tbody>
     </table>
 
-    <Message severity="error" class="text-center">
+    <Message severity="error" class="text-center" v-if="$props.petSummary.is_dangerous">
         <h3 class="font-bold">
             {{ t('ui.pet_registered.warning.title') }}
         </h3>

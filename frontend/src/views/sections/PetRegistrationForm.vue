@@ -33,7 +33,7 @@
     import { usePetCharacteristics } from '@/stores/usePetCharacteristics';
     import { onMounted } from 'vue';
     import { useRoute } from 'vue-router';
-    import PetRegistrationCard from '@/components/pet-registration/templates/PetRegistrationCard.vue';
+    import PetRegistrationCard from '@/views/layouts/PetRegistrationCard.vue';
     import { usePetFormState } from '@/stores/usePetFormState';
     import { storeToRefs } from 'pinia';
     import PetNameField from '@/components/pet-registration/molecules/PetNameField.vue';
