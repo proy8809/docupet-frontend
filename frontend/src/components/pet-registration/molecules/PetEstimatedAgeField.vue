@@ -1,6 +1,6 @@
 <template>
     <WithLabel :label="t('ui.pet_form.labels.approximate_age')">
-        <NumberControl v-model="modelValue" :min="$props.min" :max="$props.max" />
+        <NumberControl v-model="modelValue" :min="1" :max="20" />
     </WithLabel>
 </template>
 <script setup lang="ts">
@@ -9,11 +9,6 @@
     import { useI18n } from 'vue-i18n';
 
     const { t } = useI18n();
-
-    defineProps<{
-        min?: number;
-        max?: number;
-    }>();
 
     const modelValue = defineModel<number | undefined>('modelValue');
 </script>

@@ -18,7 +18,12 @@
                 @click:unknown="handleBreedUnknownClicked"
             />
             <PetGenderField v-model="gender" />
-            <PetBirthday v-model:date-of-birth="dateOfBirth" v-model:estimated-age="estimatedAge" />
+            <PetBirthday
+                v-model:date-of-birth="dateOfBirth"
+                v-model:estimated-age="estimatedAge"
+                @click:birthdate-known="handleBirthdateKnownClicked"
+                @click:birthdate-unknown="handleBirthdateUnknownClicked"
+            />
         </template>
         <template #footer>
             <ButtonControl
@@ -79,7 +84,19 @@
         breedMix.value = '';
     }
 
+    function handleBirthdateKnownClicked(): void {
+        estimatedAge.value = undefined;
+        dateOfBirth.value = new Date();
+    }
+
+    function handleBirthdateUnknownClicked(): void {
+        estimatedAge.value = 1;
+        dateOfBirth.value = undefined;
+    }
+
     onMounted(async () => {
         await loadPetBreeds(route.params.petType as string);
+
+        estimatedAge.value = 1;
     });
 </script>
