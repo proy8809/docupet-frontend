@@ -88,7 +88,3 @@
 .pet-registration .pet-summary-table > tbody > tr > td.value {
     @apply w-1/2 p-2;
 }
-
-.pet-registration .pet-summary-warning {
-    @apply p-4 text-white text-center font-bold bg-red-400 border rounded-md shadow-md;
-}

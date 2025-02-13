@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker compose down -t 0
+docker compose -p docupet-frontend down -t 0

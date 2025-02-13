@@ -32,18 +32,24 @@
         </tbody>
     </table>
 
-    <div class="pet-summary-warning" v-if="$props.petSummary.is_dangerous">
-        {{
-            t('ui.pet_registered.warning', {
-                name: $props.petSummary.name,
-                breed: t(`domain.breeds.${$props.petSummary.breed}`)
-            })
-        }}
-    </div>
+    <Message severity="error" class="text-center">
+        <h3 class="font-bold">
+            {{ t('ui.pet_registered.warning.title') }}
+        </h3>
+        <p>
+            {{
+                t('ui.pet_registered.warning.message', {
+                    name: $props.petSummary.name,
+                    breed: t(`domain.breeds.${$props.petSummary.breed}`)
+                })
+            }}
+        </p>
+    </Message>
 </template>
 
 <script setup lang="ts">
     import { PetSummary } from '@/stores/usePetFormState.defs';
+    import { Message } from 'primevue';
     import { computed } from 'vue';
     import { useI18n } from 'vue-i18n';
 
