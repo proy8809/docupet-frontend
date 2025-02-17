@@ -1,7 +1,10 @@
 <template>
     <Card
-        class="w-full max-w-lg p-6 border-none shadow-none md:shadow-md md:rounded-lg bg-white pet-registration"
+        class="max-w-lg px-6 bg-white border-none rounded-lg shadow-none md:shadow-md md:py-6 pet-registration"
     >
+        <template #header>
+            <DogPawHeader />
+        </template>
         <template #title>
             <h1 class="text-xl font-semibold text-primary-800" :class="$props.titleClasses">
                 {{ $props.title }}
@@ -12,32 +15,17 @@
                 <slot name="content"></slot>
             </div>
 
-            <div class="text-center mt-12 mb-8" v-if="!!$slots.footer">
+            <div class="text-center mt-6" v-if="!!$slots.footer">
                 <slot name="footer"></slot>
-            </div>
-
-            <div class="flex justify-end items-center gap-2">
-                <a class="text-sm text-primary cursor-pointer" @click="navigateToRoute('index')">
-                    {{ t('general.back_home') }}
-                </a>
-
-                <span>-</span>
-
-                <a class="text-sm text-primary cursor-pointer" @click="switchLanguage">
-                    {{ t('general.other_language') }}
-                </a>
             </div>
         </template>
     </Card>
 </template>
 <script setup lang="ts">
+    import DogPawHeader from '@/components/shared/molecules/DogPawHeader.vue';
     import { useNavigation } from '@/utils/useNavigation';
     import { Card } from 'primevue';
     import { useI18n } from 'vue-i18n';
-
-    const { t } = useI18n();
-
-    const { navigateToRoute, switchLanguage } = useNavigation();
 
     withDefaults(
         defineProps<{

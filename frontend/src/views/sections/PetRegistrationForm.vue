@@ -1,7 +1,7 @@
 <template>
     <PetRegistrationCard
         :title="
-            t('ui.pet_form.labels.name', {
+            t('ui.pet_form.title', {
                 type: t(`domain.types.${route.params.petType as string}`)
             })
         "

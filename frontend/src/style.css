@@ -45,6 +45,10 @@
     --p-text-hover-muted-color: var(--p-surface-600);
 }
 
+body {
+    @apply md:bg-gray-100;
+}
+
 .pet-registration .switch-control {
     @apply border border-primary p-0 w-48;
 }
