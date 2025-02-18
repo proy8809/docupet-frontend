@@ -46,7 +46,7 @@
 }
 
 body {
-    @apply md:bg-gray-100;
+    @apply text-sm bg-white md:text-base md:bg-gray-100;
 }
 
 .pet-registration .switch-control {
@@ -75,20 +75,4 @@ body {
 
 .pet-registration .p-button:disabled {
     @apply bg-[#dcdcdc] border-[#dcdcdc];
-}
-
-.pet-registration .pet-summary-table {
-    @apply w-full border-collapse border border-surface-300;
-}
-
-.pet-registration .pet-summary-table > tbody > tr:not(:last-child) {
-    @apply border-b border-surface-200;
-}
-
-.pet-registration .pet-summary-table > tbody > tr > td.label {
-    @apply w-1/2 p-2 font-semibold;
-}
-
-.pet-registration .pet-summary-table > tbody > tr > td.value {
-    @apply w-1/2 p-2;
 }

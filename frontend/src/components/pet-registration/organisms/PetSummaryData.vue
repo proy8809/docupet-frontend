@@ -71,3 +71,21 @@
         return t(`ui.pet_registered.unknown_breed`);
     });
 </script>
+
+<style lang="css" scoped>
+    .pet-summary-table {
+        @apply w-full border-collapse border border-surface-300;
+    }
+
+    .pet-summary-table > tbody > tr:not(:last-child) {
+        @apply border-b border-surface-200;
+    }
+
+    .pet-summary-table > tbody > tr > td.label {
+        @apply w-1/2 p-2 font-semibold;
+    }
+
+    .pet-summary-table > tbody > tr > td.value {
+        @apply w-1/2 p-2;
+    }
+</style>

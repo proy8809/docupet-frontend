@@ -1,5 +1,5 @@
 <template>
-    <header class="p-4 bg-white relative flex justify-center items-center md:shadow-md">
+    <header class="p-4 bg-white relative flex justify-center items-center md:shadow-md md:mb-8">
         <img src="/logo.png" class="h-8" />
         <nav class="hidden text-sm right-8 absolute md:block">
             <ul class="flex gap-4">
@@ -16,7 +16,7 @@
             </ul>
         </nav>
     </header>
-    <main class="w-full mt-8 flex items-center justify-center w-full">
+    <main class="md:flex md:items-center md:justify-center">
         <RouterView />
     </main>
 </template>

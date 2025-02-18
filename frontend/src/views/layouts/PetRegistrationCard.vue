@@ -1,7 +1,5 @@
 <template>
-    <Card
-        class="max-w-lg px-6 bg-white border-none rounded-lg shadow-none md:shadow-md md:py-6 pet-registration"
-    >
+    <Card class="w-full p-6 bg-white shadow-none md:shadow-md md:max-w-md pet-registration">
         <template #header>
             <DogPawHeader />
         </template>
@@ -23,9 +21,7 @@
 </template>
 <script setup lang="ts">
     import DogPawHeader from '@/components/shared/molecules/DogPawHeader.vue';
-    import { useNavigation } from '@/utils/useNavigation';
     import { Card } from 'primevue';
-    import { useI18n } from 'vue-i18n';
 
     withDefaults(
         defineProps<{
